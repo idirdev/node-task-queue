@@ -1,0 +1,33 @@
+{
+  "name": "node-task-queue",
+  "version": "1.0.0",
+  "description": "Background task queue system for Node.js with priority support, retries, scheduling, and middleware",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "example": "ts-node examples/basic.ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "task-queue",
+    "background-jobs",
+    "worker",
+    "scheduler",
+    "retry",
+    "priority-queue"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "@types/uuid": "^3.4.5",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  }
+}
