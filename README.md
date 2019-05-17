@@ -250,3 +250,33 @@ npx ts-node examples/basic.ts
 ## License
 
 MIT
+
+---
+
+## 🇫🇷 Documentation en français
+
+### Description
+node-task-queue est un système de file d'attente de tâches en arrière-plan, léger et en mémoire, pour les applications Node.js. Il prend en charge la planification par priorité, les tentatives avec backoff, les tâches récurrentes, les middlewares et la collecte de métriques.
+
+### Installation
+```bash
+npm install
+npm run build
+```
+
+### Utilisation
+```typescript
+import { TaskQueue, Worker } from 'node-task-queue';
+
+const queue = new TaskQueue({ name: 'ma-file' });
+const worker = new Worker(queue, { concurrency: 2 });
+
+worker.register('saluer', async (task, helpers) => {
+  return `Bonjour, ${task.data.nom}!`;
+});
+
+worker.start();
+queue.enqueue('saluer', { nom: 'Monde' }, { priority: 'high' });
+```
+
+Consultez la documentation anglaise ci-dessus pour la référence complète de l'API, le planificateur, les middlewares et les stratégies de retry.
